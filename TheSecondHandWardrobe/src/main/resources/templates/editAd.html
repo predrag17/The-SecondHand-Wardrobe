@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Advertisement</title>
+    <link rel="stylesheet" href="/css/index.css">
+</head>
+<body>
+<section id="header">
+    <a href="#"><img src="/images/slika1.png" class="logo" alt=""></a>
+    <div>
+        <ul id="navbar">
+            <li><a th:href="@{/index}">Home</a></li>
+            <li><a th:text="${loggedInName}" th:href="@{/logout}"></a></li>
+            <li><a href="#">Bag</a></li>
+        </ul>
+    </div>
+</section>
+
+<h1 id="step">Editing...</h1>
+
+<section id="adding">
+    <div class="adding">
+        <form th:action="@{'/advertisements/edit/' + ${ad.getId()}}" th:method="post" th:object="${ad}"
+              enctype="multipart/form-data">
+            <div th:if="${error2}">
+                <p>You forgot to upload an image</p>
+            </div>
+            <div class="image">
+                <input type="file" name="file" id="fileToUpload" accept="image/*" onchange="displayImage()">
+                <img id="uploadedImage" alt="Мора само .png">
+            </div>
+
+            <input th:value="${ad.getAppUser().getName()}" type="text" placeholder="Name..." id="name" name="name"
+                   required>
+            <br>
+
+            <input th:value="${ad.getAppUser().getLastName()}" type="text" placeholder="Last name..." id="lastName"
+                   name="lastName" required>
+            <br>
+
+            <input th:value="${ad.getAppUser().getEmail()}" type="text" placeholder="Email..." id="email" name="email" required>
+            <br>
+
+            <div class="selected">
+                <select class="selection" id="category" name="category" onchange="changeSelect()">
+                    <option selected disabled hidden>Choose model</option>
+                    <option>Dresses</option>
+                    <option>Shirts</option>
+                    <option>Shoes</option>
+                    <option>Jackets&Coats</option>
+                    <option>Jeans</option>
+                    <option>Bags</option>
+                    <option>Accessories</option>
+                    <option>Skirts</option>
+                </select>
+
+                <select class="otherSelection" id="size" name="size">
+                    <option></option>
+                    <option>XXS</option>
+                    <option>XS</option>
+                    <option>S</option>
+                    <option>M</option>
+                    <option>L</option>
+                    <option>XL</option>
+                    <option>XXL</option>
+                </select>
+
+                <select class="otherSelection" id="number" name="shoeSize">
+                    <option></option>
+                    <option>30</option>
+                    <option>31</option>
+                    <option>32</option>
+                    <option>33</option>
+                    <option>34</option>
+                    <option>35</option>
+                    <option>36</option>
+                    <option>37</option>
+                    <option>38</option>
+                    <option>39</option>
+                    <option>40</option>
+                    <option>41</option>
+                    <option>42</option>
+                    <option>43</option>
+                    <option>44</option>
+                    <option>45</option>
+                    <option>46</option>
+                    <option>47</option>
+                    <option>48</option>
+                    <option>49</option>
+                </select>
+            </div>
+
+
+            <div id="detail">
+                <textarea th:text="${ad.getDetails()}" placeholder="Details..." type="text" id="details" name="details" rows="10"
+                          cols="80"
+                          required></textarea>
+            </div>
+
+            <div id="defect">
+                <textarea th:text="${ad.getDefects()}" placeholder="Details..." type="text" id="defects" name="defects" rows="10"
+                          cols="80"
+                          required></textarea>
+            </div>
+
+
+            <button type="submit">Save</button>
+
+
+        </form>
+    </div>
+</section>
+
+</body>
+
+<script>
+    function displayImage() {
+        var fileInput = document.getElementById("fileToUpload");
+        var uploadedImage = document.getElementById("uploadedImage");
+
+        var file = fileInput.files[0];
+        if (file) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                uploadedImage.src = e.target.result;
+                uploadedImage.style.display = "block";
+            };
+            reader.readAsDataURL(file);
+        }
+    }
+
+
+    var size = document.getElementById("size");
+    var number = document.getElementById("number");
+    size.style.display = "none";
+    number.style.display = "none";
+
+    function changeSelect() {
+        var categorySelect = document.getElementById("category");
+        var size = document.getElementById("size");
+        var number = document.getElementById("number");
+        categorySelect = categorySelect.value;
+
+        if (categorySelect === "Shoes") {
+            number.style.display = "inline-block";
+            size.style.display = "none";
+            size.selectedIndex = 0;
+        } else if (categorySelect === "") {
+            size.style.display = "none";
+            number.style.display = "none";
+            size.selectedIndex = 0;
+            number.selectedIndex = 0;
+        } else {
+            size.style.display = "inline-block";
+            number.style.display = "none";
+            number.selectedIndex = 0;
+        }
+    }
+</script>
+</html>

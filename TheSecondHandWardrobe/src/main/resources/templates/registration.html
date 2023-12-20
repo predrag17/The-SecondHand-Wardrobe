@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration</title>
+    <link rel="stylesheet" href="/css/index.css">
+</head>
+<body>
+<section id="header">
+    <a href="#"><img src="/images/slika1.png" class="logo" alt=""></a>
+    <div>
+        <ul id="navbar">
+            <li><a th:href="@{/index}">Home</a></li>
+            <li><a th:href="@{/login}">Login</a></li>
+            <li><a href="#">Bag</a></li>
+        </ul>
+    </div>
+</section>
+
+<section id="form">
+    <div class="all">
+        <div class="login">
+            <h1>Register</h1>
+            <form th:action="@{/registration}" th:method="post">
+                <input th:value="${first}" type="text" placeholder="Name..." id="name" name="name" required>
+                <br>
+
+                <input th:value="${last}" type="text" placeholder="Last name..." id="lastName" name="lastName" required>
+                <br>
+
+                <div th:if="${used}">
+                    <p>Email already used</p>
+                </div>
+                <input th:value="${mail}" type="text" placeholder="Email..." id="email" name="email" required>
+                <br>
+
+                <input type="password" placeholder="Password..." id="password" name="password" required>
+                <br>
+
+                <input type="password" placeholder="Confirm your password..." id="confirm" name="confirm" required>
+                <div th:if="${error}">
+                    <p>Incorrect password!</p>
+                </div>
+                <br>
+                <button type="submit">Register</button>
+            </form>
+        </div>
+
+        <div class="register">
+            <a th:href="@{/login}">
+                <button type="submit">Login to your account!</button>
+            </a>
+        </div>
+    </div>
+
+</section>
+</body>
+</html>

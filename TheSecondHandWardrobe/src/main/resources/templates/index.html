@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home page</title>
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+</head>
+<body>
+
+
+<section id="header">
+    <a href="#"><img src="/images/slika1.png" class="logo" alt=""></a>
+    <div>
+        <ul id="navbar">
+            <li><a class="active" th:href="@{/index}">Home</a></li>
+            <div th:if="${loggedInName}">
+                <li><a th:text="${loggedInName}" th:href="@{/logout}"></a></li>
+            </div>
+            <div th:unless="${loggedInName}">
+                <li><a th:href="@{/login}">Login</a></li>
+            </div>
+            <li><a href="#">Bag</a></li>
+        </ul>
+    </div>
+</section>
+
+<section id="hero">
+</section>
+
+<h1 class="undersector">Choose what you want to order</h1>
+<section id="feature" class="section-p1">
+
+    <div class="fe-box">
+        <a th:href="@{/dresses}">
+            <img src="/images/obleka1.png" alt="">
+            <h3>Dresses</h3>
+        </a>
+    </div>
+    <div class="fe-box">
+        <a th:href="@{/skirts}">
+            <img src="/images/obleka8.png" alt="">
+            <h3>Skirts</h3>
+        </a>
+    </div>
+    <div class="fe-box">
+        <a th:href="@{/shoes}">
+            <img src="/images/obleka3.png" alt="">
+            <h3>Shoes</h3>
+        </a>
+    </div>
+    <div class="fe-box">
+        <a th:href="@{/jackets}">
+            <img src="/images/obleka4.png" alt="">
+            <h3>Jackets&Coats</h3>
+        </a>
+    </div>
+    <div class="fe-box">
+        <a th:href="@{/jeans}">
+            <img src="/images/obleka5.png" alt="">
+            <h3>Jeans</h3>
+        </a>
+    </div>
+    <div class="fe-box">
+        <a th:href="@{/bags}">
+            <img src="/images/obleka6.png" alt="">
+            <h3>Bags</h3>
+        </a>
+    </div>
+    <div class="fe-box">
+        <a th:href="@{/accessories}">
+            <img src="/images/obleka7.png" alt="">
+            <h3>Accessories</h3>
+        </a>
+    </div>
+    <div class="fe-box">
+        <a th:href="@{/shirts}">
+            <img src="/images/obleka2.png" alt="">
+            <h3>Shirts</h3>
+        </a>
+    </div>
+</section>
+
+<section id="addAd">
+
+    <div th:if="${loggedInName}">
+        <a th:href="@{/addAdvertisement}">
+            <button>Add Advertisement</button>
+        </a>
+
+        <a th:href="@{/listAllAds}">
+            <button>See your ads</button>
+        </a>
+    </div>
+
+</section>
+
+<footer class="section-p1">
+    <img src="/images/slika1.png" alt="" class="logo">
+    <div class="col">
+        <h3>Contact</h3>
+        <p><strong>Email:</strong> sterjoskipredragit@gmail.com</p>
+        <p><Strong>Instagram:</Strong> shw</p>
+    </div>
+</footer>
+</body>
+</html>

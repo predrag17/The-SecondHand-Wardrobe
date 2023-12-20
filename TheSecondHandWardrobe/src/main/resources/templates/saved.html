@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Saved</title>
+  <link rel="stylesheet" href="/css/index.css">
+</head>
+<body>
+<section id="header">
+  <a href="#"><img src="/images/slika1.png" class="logo" alt=""></a>
+  <div>
+    <ul id="navbar">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Login</a></li>
+      <li><a href="#">Bag</a></li>
+    </ul>
+  </div>
+</section>
+
+<section id="noAds">
+  <div class="container">
+    <div class="popup" id="popup">
+      <h2>Successfully saved ad</h2>
+      <a th:href="@{/index}" th:method="get">
+        <button type="button">Go back</button>
+      </a>
+    </div>
+  </div>
+</section>
+
+<script>
+  let popup = document.getElementById("popup");
+  popup.classList.add("open-popup");
+</script>
+
+</body>
+</html>

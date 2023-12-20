@@ -1,0 +1,159 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    background-color: #4c4ca4;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+.left-icons {
+    display: flex;
+    align-items: center;
+}
+
+.left-icons img {
+    margin-right: 150px;
+    height: 30px;
+    width: auto;
+    border-radius: 20%;
+}
+
+.header-links {
+    display: flex;
+    align-items: center;
+}
+
+.header-links a {
+    margin-right: 10px;
+    text-decoration: none;
+    color: grey;
+}
+
+.header-links .container1:hover a {
+    color: black;
+    font-weight: bold;
+    transform: scale(1);
+    transition: 400ms;
+}
+
+.header-links .container1:not(:hover) a {
+    transition: 400ms;
+}
+
+#register {
+    margin-left: 100px;
+    margin-top: 50px;
+    color: #4c4ca4;
+    font-weight: bold;
+}
+
+.form {
+    margin-left: 110px;
+}
+
+.form label {
+    color: #4c4ca4;
+    font-size: 25px;
+    font-style: italic;
+}
+
+.form input {
+    padding: 10px 100px 10px 25px;
+    border-radius: 25px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    width: 300px;
+}
+
+.form > div:not(.names) input {
+    padding: 10px 550px 10px 25px;
+    border-radius: 25px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+
+.form .names {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.form .names #lastNameDiv {
+    margin-left: 50px;
+}
+
+.form button {
+    padding: 7px 50px 7px 50px;
+    color: #4c4ca4;
+    font-style: italic;
+    font-weight: bold;
+    border-radius: 20px;
+
+}
+
+.form .buttons {
+    display: grid;
+    grid-template-columns: 170px 170px;
+}
+
+
+.form .buttons {
+    margin-left: 350px;
+}
+
+.form #container2 {
+    display: inline-block;
+}
+
+.form .buttons #container1:hover button {
+    transform: scale(1.2);
+    background-color: #6565b0;
+    color: white;
+    transition: 400ms;
+}
+
+.form .buttons #container1:not(:hover) button {
+    transition: 400ms;
+}
+
+.form .buttons #container2:hover button {
+    transform: scale(1.2);
+    background-color: #6565b0;
+    color: white;
+    transition: 400ms;
+}
+
+.form .buttons #container2:not(:hover) button {
+    transition: 400ms;
+}
+
+.main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 200px;
+}
+
+.justAnImage {
+    margin-top: 500px;
+}
+
+.form p {
+    display:inline-block;
+    color: #4c4ca4;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.form p:hover {
+    transform: scale(1.2);
+    text-decoration: underline;
+    transition: 400ms;
+}
+
+.form p:not(:hover) {
+    transition: 400ms;
+}

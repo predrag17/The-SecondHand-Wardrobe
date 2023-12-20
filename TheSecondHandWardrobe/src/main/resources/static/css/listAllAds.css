@@ -1,0 +1,239 @@
+body {
+    margin: 0;
+}
+
+nav {
+    background-color: #4c4ca4;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+.left-icons {
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+    margin-left: 20px;
+}
+
+.left-icons #logo {
+    margin-right: 100px;
+}
+
+.left-icons img {
+    height: 30px;
+    width: auto;
+    border-radius: 20%;
+}
+
+#add-ad {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+
+#add-ad h1 {
+    text-decoration: none;
+    font-size: 20px;
+    color: black;
+}
+
+#add-ad img {
+    margin-right: 20px;
+}
+
+#add-ad:hover img, #add-ad:hover h1 {
+    transform: scale(1.2);
+    color: red;
+    transition: 400ms;
+}
+
+#add-ad:not(:hover) img, #add-ad:not(:hover) h1 {
+
+    transition: 400ms;
+}
+
+.left-icons #add-ad img {
+    width: 26px;
+    border-radius: 50%;
+}
+
+.center-search {
+    flex-grow: 1;
+    text-align: center;
+}
+
+#search-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+input[type="text"] {
+    padding: 6px;
+    border: none;
+    border-radius: 4px;
+}
+
+button[type="submit"] {
+    padding: 6px 12px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    margin-left: 6px;
+}
+
+.header-links {
+    display: flex;
+    align-items: center;
+}
+
+.header-links a {
+    margin-right: 10px;
+    text-decoration: none;
+    color: grey;
+}
+
+.header-links .container1:hover a {
+    color: black;
+    font-weight: bold;
+    transform: scale(1);
+    transition: 400ms;
+}
+
+.header-links .container1:not(:hover) a {
+    transition: 400ms;
+}
+
+
+.listing {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 100px;
+}
+
+.listing ul {
+    list-style-type: none;
+}
+
+.listing li {
+    margin-bottom: 100px;
+}
+
+.listing p {
+    font-size: 20px;
+    color: #6565b0;
+}
+
+.listing .all {
+    display: flex;
+    justify-content: center;
+}
+
+.listing .all .image img {
+    width: 400px;
+}
+
+.listing .all .image {
+    margin-right: 100px;
+    margin-top: 100px;
+}
+
+.listing .all .others .details p {
+    height: 250px;
+    width: 500px;
+    overflow: auto;
+}
+
+.advertisement-buttons {
+    display: none;
+}
+
+.all:hover {
+    border: solid #6565b0;
+    border-radius: 20px;
+    padding: 30px 30px 30px 30px;
+    transition: 1000ms;
+    transform: scale(1);
+    background: #4c4ca4;
+
+}
+
+.all:hover p {
+    color: white;
+}
+
+.all:not(:hover) {
+    transition: 1000ms;
+}
+
+
+.all:hover .advertisement-buttons {
+    display: block;
+}
+
+.all:not(:hover) .advertisement-buttons {
+    display: none;
+}
+
+.delete-button, .edit-button {
+    display: inline-block;
+    padding: 10px 20px; /* Прилагодете го големината на копчето според вашите потреби */
+    background-color: #cccccc; /* Боја на заднина */
+    color: #4c4ca4; /* Боја на текстот */
+    border-radius: 4px; /* Заоблени агли */
+    text-decoration: none; /* Отстранување на подчертувањето на линијата */
+    font-weight: bold; /* Дебелина на текстот */
+    font-style: italic;
+}
+
+.delete-button:hover {
+    background-color: #ff6666; /* Боја на заднина при прелистување со глувче (hover) */
+    border: 1px solid #ff6666; /* Рамка со боја при прелистување со глувче (hover) */
+    color: #ffffff; /* Боја на текстот при прелистување со глувче (hover) */
+}
+
+
+.delete-button,
+.edit-button {
+    color: #4c4ca4;
+    font-style: italic;
+    font-weight: bold;
+    border-radius: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 50px;
+    padding-right: 50px;
+    margin-right: 10px;
+}
+
+.delete-button:hover,
+.edit-button:hover {
+    background-color: #6565b0;
+    color: white;
+    transition: 400ms;
+    transform: scale(1.2);
+}
+
+.delete-button:not(:hover),
+.edit-button:not(:hover) {
+    transition: 400ms;
+}
+
+.error {
+    display: flex;
+    justify-content: center;
+}
+
+.error p {
+    color: #6565b0;
+    font-size: 50px;
+
+}
+
+.error span {
+    color: red;
+}

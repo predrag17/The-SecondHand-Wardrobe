@@ -1,0 +1,51 @@
+body {
+    margin: 0;
+}
+
+nav {
+    background-color: #4c4ca4;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+.left-icons {
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+    margin-left: 20px;
+}
+
+.left-icons #logo {
+    margin-right: 100px;
+}
+
+.left-icons img {
+    height: 30px;
+    width: auto;
+    border-radius: 20%;
+    margin-right: 10px;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+}
+.main p {
+    color: #6565b0;
+    font-size: 50px;
+}
+
+.main a {
+    color: #6565b0;
+}
+
+.main a:hover {
+    color: black;
+    transition: 400ms;
+    font-size: 60px;
+}
+
+.main a:not(:hover) {
+    transition: 400ms;
+}

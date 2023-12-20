@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Jackets&Coats</title>
+    <link rel="stylesheet" href="/css/index.css">
+</head>
+<body>
+<section id="header">
+    <a href="#"><img src="/images/slika1.png" class="logo" alt=""></a>
+    <div>
+        <ul id="navbar">
+            <li><a th:href="@{/index}">Home</a></li>
+            <div th:if="${loggedInName}">
+                <li><a th:text="${loggedInName}" th:href="@{/logout}"></a></li>
+            </div>
+            <div th:unless="${loggedInName}">
+                <li><a th:href="@{/login}">Login</a></li>
+            </div>
+            <li><a href="#">Bag</a></li>
+        </ul>
+    </div>
+</section>
+
+<section id="noAds">
+    <div class="container">
+        <div class="popup" id="popup">
+            <h2>There is no added ad for this category</h2>
+            <a th:href="@{/addAdvertisement}" th:method="get">
+                <button type="button">Add an ad</button>
+            </a>
+        </div>
+    </div>
+</section>
+
+<th:block th:if="${error4}">
+    <script>
+        let popup = document.getElementById("popup");
+        popup.classList.add("open-popup");
+    </script>
+</th:block>
+
+<th:block th:unless="${error4}">
+    <section id="filter">
+        <h2 class="added">Jackets&Coats</h2>
+        <div class="filtering">
+            <h2>Filter</h2>
+        </div>
+
+    </section>
+
+
+    <section id="product1" class="section-p1">
+        <div class="pro-container">
+            <ul>
+                <li th:each="advertisement : ${advertisements}">
+                    <div class="pro">
+                        <a href="#">
+                            <img th:src="@{'data:image/png;base64,' + ${advertisement.getImage().getBase()}}" alt="">
+                            <div class="des">
+                                <h3>Email: <span th:text="${advertisement.getAppUser().getEmail()}"></span></h3>
+                                <p>Category: <span th:text="${advertisement.getModel()}"></span></p>
+                                <p>Size: <span th:text="${advertisement.getSize()}"></span></p>
+                            </div>
+                        </a>
+                        <div th:if="${loggedInEmail eq advertisement.getAppUser().getEmail()}" class="buttons">
+                            <a th:href="@{'/advertisements/delete/' + ${advertisement.getId()}}">
+                                <button id="delete">Delete</button>
+                            </a>
+                            <a th:href="@{'/advertisements/edit/' + ${advertisement.getId()}}">
+                                <button>Edit</button>
+                            </a>
+                        </div>
+
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+</th:block>
+
+</body>
+</html>

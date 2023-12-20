@@ -1,0 +1,185 @@
+body {
+    margin: 0;
+    padding: 0;
+
+
+}
+
+nav {
+    background-color: #4c4ca4;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+.left-icons {
+    display: flex;
+    align-items: center;
+}
+
+.left-icons img {
+    margin-right: 150px;
+    height: 30px;
+    width: auto;
+    border-radius: 20%;
+}
+
+.header-links {
+    display: flex;
+    align-items: center;
+}
+
+.header-links a {
+    margin-right: 10px;
+    text-decoration: none;
+    color: grey;
+}
+
+.header-links .container1:hover a {
+    color: black;
+    font-weight: bold;
+    transform: scale(1);
+    transition: 400ms;
+}
+
+.header-links .container1:not(:hover) a {
+    transition: 400ms;
+}
+
+#login {
+    margin-left: 200px;
+    margin-top: 100px;
+    color: #4c4ca4;
+    font-weight: bold;
+}
+
+.main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 2px;
+}
+
+.loginDiv {
+
+}
+
+.createAccount {
+    margin-left: 200px;
+}
+
+.createAccount p {
+    color: #4c4ca4;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.createAccount a {
+    margin-left: 50px;
+}
+
+.createAccount button {
+    color: #4c4ca4;
+    font-style: italic;
+    font-weight: bold;
+    border-radius: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 50px;
+    padding-right: 50px;
+    margin-bottom: 300px;
+}
+
+.createAccount:hover button {
+    transform: scale(1.2);
+    background-color: #6565b0;
+    color: white;
+    transition: 400ms;
+}
+
+.createAccount:not(:hover) button {
+    transition: 400ms;
+}
+
+.form {
+    margin-left: 250px;
+}
+
+.form label {
+    color: #4c4ca4;
+    font-size: 25px;
+    font-style: italic;
+}
+
+.form input {
+    padding: 10px 250px 10px 25px;
+    border-radius: 25px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    width: 300px;
+}
+
+.form button {
+    padding: 7px 50px 7px 50px;
+    color: #4c4ca4;
+    font-style: italic;
+    font-weight: bold;
+    border-radius: 20px;
+
+}
+
+.form .buttons {
+    display: grid;
+    grid-template-columns: 170px 1fr;
+}
+
+
+.form .buttons {
+    margin-left: 250px;
+}
+
+.form .buttons #container1:hover button {
+    transform: scale(1.2);
+    background-color: #6565b0;
+    color: white;
+    transition: 400ms;
+}
+
+.form .buttons #container1:not(:hover) button {
+    transition: 400ms;
+}
+
+.form .buttons #container2:hover button {
+    transform: scale(1.2);
+    background-color: #6565b0;
+    color: white;
+    transition: 400ms;
+}
+
+.form .buttons #container2:not(:hover) button {
+
+    transition: 400ms;
+}
+
+.form p {
+    display:inline-block;
+    color: #4c4ca4;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.form p:hover {
+    transform: scale(1.2);
+    text-decoration: underline;
+    transition: 400ms;
+}
+
+.form p:not(:hover) {
+    transition: 400ms;
+}
+
+.para p {
+    color: #6565b0;
+    font-size: 40px;
+    margin-left: 200px;
+
+}
